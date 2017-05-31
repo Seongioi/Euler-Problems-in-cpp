@@ -1,6 +1,3 @@
-//
-// Created by seong on 5/31/2017.
-//
 #include <iostream>
 
 //sum of all the multiples of 3 or 5 below ADDTO
