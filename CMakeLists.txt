@@ -12,3 +12,4 @@ add_executable(ID_004_Largest_palindrome_product ID_004_Largest_palindrome_produ
 add_executable(ID_005_Smallest multiple "ID_005_Smallest multiple.cpp")
 add_executable(ID_006_Sum_square_difference ID_006_Sum_square_difference.cpp)
 add_executable(ID_007_10001st_prime ID_007_10001st_prime.cpp)
+add_executable(ID_010_Summation_of_primes ID_010_Summation_of_primes.cpp)
