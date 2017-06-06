@@ -1,5 +1,5 @@
 #include <iostream>
-#include <limits>
+#include <climits>
 
 bool smallestUpto20(unsigned long int);
 
