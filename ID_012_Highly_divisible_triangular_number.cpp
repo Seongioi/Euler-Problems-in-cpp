@@ -13,35 +13,42 @@ Let us list the factors of the first seven triangle numbers:
 We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 */
-
 #include <iostream>
-#define NUM 200 // number of divisors
+
+#define NUM 500 // number of divisors
 
 int factorCount(unsigned long long int x);
 
 int main(){
-    unsigned long long int triangleN = 0, count = 1;
-    while(factorCount(triangleN) < NUM){
+
+    unsigned long long int triangleN = 0, count = 1; // triangleN = (count*(count +1))/2
+    do{
         triangleN += count;
         count++;
-    }
+    }while(factorCount(triangleN) <= NUM);
     std::cout << "the value of the first triangle number to have over five hundred divisors is: " << triangleN << std::endl;
     return 0;
+
 }
 
 int factorCount(unsigned long long int x){
-    int factors = 0;
-    if(x % 2 != 0) {
-        for (unsigned long long int i = 1; i <= x/2; i+=2) {
-            if (x % i == 0)
-                factors++;
-        }
-    } else {
-        for (unsigned long long int i = 1; i <= x/2; ++i) {
-            if (x % i == 0)
-                factors++;
+    unsigned int factors = 1;
+    int count = 0;
+    while(x % 2 == 0) {
+        x /= 2;
+        count++;
+    }
+    factors *= ++count;
+    for (unsigned long long int i = 3; i <= x; i+=2) {
+        if (x % i == 0){
+            count = 0;
+            while(x % i == 0){
+                count++;
+                x /= i;
+            }
+            factors *= ++count;
         }
     }
-    factors++;
     return factors;
+
 }

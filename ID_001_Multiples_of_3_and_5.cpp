@@ -19,6 +19,7 @@ int main()
                 total -= 15 * i;
         }
     }
+
     //print total
     std::cout << "Sum of all all the multiples of 3 or 5 below 1000 is:" << total << std::endl;
     return 0;
